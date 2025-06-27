@@ -26,6 +26,5 @@ func decodeXML(r io.Reader, v any) error {
 	if err := decoder.Decode(v); err != nil {
 		return errors.New("error decoding xml: " + err.Error())
 	}
-	validator.Validate(v)
-	return nil
+	return validator.Validate(v)
 }

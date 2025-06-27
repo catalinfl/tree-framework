@@ -59,7 +59,7 @@ func decodeForm(req *http.Request, v any) error {
 		return errors.New("error decoding form: " + err.Error())
 	}
 
-	return nil
+	return validator.Validate(v)
 }
 
 func mapForm(req *http.Request, v any) error {

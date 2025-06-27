@@ -29,5 +29,5 @@ func decodeTOML(r io.Reader, v any) error {
 		return errors.New("error decoding xml: " + err.Error())
 	}
 	validator.Validate(v)
-	return nil
+	return validator.Validate(v)
 }

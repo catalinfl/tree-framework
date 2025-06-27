@@ -29,7 +29,7 @@ func decodeQuery(query map[string][]string, v any) error {
 	if err != nil {
 		return errors.New("error decoding query: " + err.Error())
 	}
-	return nil
+	return validator.Validate(v)
 }
 
 func bindMap(m map[string][]string, v any) error {

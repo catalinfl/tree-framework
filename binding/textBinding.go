@@ -39,5 +39,5 @@ func decodeText(r io.Reader, v any) error {
 		return nil
 	}
 
-	return nil
+	return validator.Validate(v)
 }

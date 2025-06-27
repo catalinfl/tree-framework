@@ -28,5 +28,5 @@ func decodeYAML(r io.Reader, v any) error {
 	if err := decoder.Decode(v); err != nil {
 		return errors.New("error decoding yaml: " + err.Error())
 	}
-	return nil
+	return validator.Validate(v)
 }
